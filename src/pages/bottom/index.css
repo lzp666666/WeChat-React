@@ -1,0 +1,21 @@
+.bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-top: 1px solid #fafafa;
+    height: 40px;
+    display: flex;
+    background-color: #fafafa;
+}
+
+.bottom>a {
+    flex: 1;
+    line-height: 40px;
+    text-align: center;
+}
+.active{
+    background-color: #ffffff;
+    font-size: 20px;
+    color: steelblue;
+}
