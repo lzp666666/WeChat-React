@@ -10,6 +10,7 @@ import my from './pages/my'
 function App() {
   return (
     <BrowserRouter>
+     <Route path="/" exact component={index} />
       <Route path="/index" exact component={index} />
       <Route path="/mailList"  component={mailList} />
       <Route path="/friend"  component={friend} />

@@ -1,0 +1,26 @@
+.userView{
+    padding: 15px;
+    height: 55px;
+    .userImg{
+        border-radius: 5px;
+        height: 55px;
+        width: 55px;
+    }
+    .userContent{
+        height: 100%;
+        border-bottom: 0.5px solid #cac2c2;
+        .content{
+            div:nth-child(1){
+                font-size: 18px;
+                font-weight: bold;
+            }
+            div:nth-child(2){
+                margin-top: 10px;
+            }   
+        }
+        .time{
+            height: 100%;
+            text-align: right;
+        }
+    }
+}
