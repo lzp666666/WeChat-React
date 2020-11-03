@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.scss'
-import { NavBar, Icon, Flex, Modal } from 'antd-mobile';
-import rightPop from '../../component/rightPop';
+import { NavBar, Icon, Flex } from 'antd-mobile';
+import RightPop from '../../component/rightPop';
 class index extends Component {
     constructor(props) {
         super(props)
@@ -41,19 +41,7 @@ class index extends Component {
                         )
                     })
                 }
-                <Modal
-                    visible={true}
-                    transparent
-                    maskClosable={true}
-                >
-                    <div style={{ height: '100%' }}>
-                        <div>
-                        <Icon type={'check-circle'}></Icon>
-                        <span>添加好友</span>
-                        <rightPop />
-                        </div>
-                    </div>
-                </Modal>
+                <RightPop />
             </div>
         )
     }
