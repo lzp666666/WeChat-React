@@ -5,9 +5,20 @@ import RightPop from '../../component/rightPop';
 class index extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            visible: false
+        }
         this.dataList = [
             { name: '晴空', content: '哦，你是个好人', time: '昨天', img: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1835174787,1419415699&fm=11&gp=0.jpg' }
         ]
+        this.clickVisible=this.clickVisible.bind(this)
+    }
+    clickVisible() {
+        console.log(this.state.visible)
+        this.setState({
+            visible: true
+        })
+        console.log(this.state.visible)
     }
     onClick() {
         this.props.history.push('/chat')
@@ -20,14 +31,14 @@ class index extends Component {
                     leftContent="消息(66)"
                     rightContent={[
                         <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
-                        <Icon key="1" type="ellipsis" />,
+                        <Icon key="1" type="ellipsis" onClick={this.clickVisible} />,
                     ]}
                 ></NavBar>
                 {
                     this.dataList.map((item, index) => {
                         return (
                             <Flex key={index} className="userView" onClick={() => this.onClick()}>
-                                <div style={{ flex: 2 }} >
+                                <div style={{ width: '75px' }} >
                                     <img className="userImg" src={item.img} alt="" />
                                 </div>
                                 <Flex style={{ flex: 8 }} className="userContent">
@@ -41,7 +52,7 @@ class index extends Component {
                         )
                     })
                 }
-                <RightPop />
+                <RightPop visible={this.state.visible} keyPop={'index'} />
             </div>
         )
     }

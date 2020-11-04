@@ -1,40 +1,40 @@
 import React, { Component } from 'react';
 import '../assets/css/rightPop.scss'
-import {Modal, Icon} from 'antd-mobile';
+import { Modal, Icon } from 'antd-mobile';
 
 
 class rightPop extends Component {
+    constructor(props) {
+        super(props)
+        this.menuList = {
+            index: [
+                { name: '发起群聊', icon: 'check-circle' },
+                { name: '添加好友', icon: 'check-circle' },
+                { name: '扫一扫', icon: 'check-circle' },
+                { name: '收付款', icon: 'check-circle' }
+            ]
+        }
+    }
     render() {
+        let { keyPop, visible } = this.props
         return (
             <Modal
-                visible={true}
+                maskClosable
+                visible={visible}
                 transparent
-                maskClosable={true}
             >
-                <div style={{ height: '100%' }}>
-                    <div className="text-vertical">
-                        <Icon type={'check-circle'}></Icon>
-                        <div>发起群聊</div>
-                    </div>
-                </div>
-                <div style={{ height: '100%' }}>
-                    <div className="text-vertical">
-                        <Icon type={'check-circle'}></Icon>
-                        <div>添加好友</div>
-                    </div>
-                </div>
-                <div style={{ height: '100%' }}>
-                    <div className="text-vertical">
-                        <Icon type={'check-circle'}></Icon>
-                        <div>扫一扫</div>
-                    </div>
-                </div>
-                <div style={{ height: '100%' }}>
-                    <div className="text-vertical">
-                        <Icon type={'check-circle'}></Icon>
-                        <div>收付款</div>
-                    </div>
-                </div>
+                {
+                    this.menuList[keyPop] && this.menuList[keyPop].map((item, index) => {
+                        return (
+                            <div style={{ height: '100%' }} key={index}>
+                                <div className="text-vertical">
+                                    <Icon type={item.icon}></Icon>
+                                    <div>{item.name}</div>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
             </Modal>
         )
     }
