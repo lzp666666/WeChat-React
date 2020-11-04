@@ -17,7 +17,7 @@ class Bottom extends Component {
     }
     render() {
         return (
-            <div  style={{ position: 'fixed', height: '100%', width: '100%', top: 0 }}>
+            <div  style={{ position: 'fixed', height: '50px', width: '100%' ,bottom:0}}>
                 <TabBar
                     unselectedTintColor="#949494"
                     tintColor="#33A3F4"
