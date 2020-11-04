@@ -12,9 +12,27 @@ class rightPop extends Component {
                 maskClosable={true}
             >
                 <div style={{ height: '100%' }}>
-                    <div>
+                    <div className="text-vertical">
                         <Icon type={'check-circle'}></Icon>
-                        <span>添加好友</span>
+                        <div>发起群聊</div>
+                    </div>
+                </div>
+                <div style={{ height: '100%' }}>
+                    <div className="text-vertical">
+                        <Icon type={'check-circle'}></Icon>
+                        <div>添加好友</div>
+                    </div>
+                </div>
+                <div style={{ height: '100%' }}>
+                    <div className="text-vertical">
+                        <Icon type={'check-circle'}></Icon>
+                        <div>扫一扫</div>
+                    </div>
+                </div>
+                <div style={{ height: '100%' }}>
+                    <div className="text-vertical">
+                        <Icon type={'check-circle'}></Icon>
+                        <div>收付款</div>
                     </div>
                 </div>
             </Modal>
