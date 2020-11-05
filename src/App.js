@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { BrowserRouter, Route } from 'react-router-dom'
 import index from './pages/index'
 import chat from './pages/index/chat'

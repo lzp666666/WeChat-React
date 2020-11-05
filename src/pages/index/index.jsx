@@ -11,14 +11,12 @@ class index extends Component {
         this.dataList = [
             { name: '晴空', content: '哦，你是个好人', time: '昨天', img: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1835174787,1419415699&fm=11&gp=0.jpg' }
         ]
-        this.clickVisible=this.clickVisible.bind(this)
+        this.clickVisible = this.clickVisible.bind(this)
     }
-    clickVisible() {
-        console.log(this.state.visible)
+    clickVisible(val) {
         this.setState({
-            visible: true
+            visible: val
         })
-        console.log(this.state.visible)
     }
     onClick() {
         this.props.history.push('/chat')
@@ -31,7 +29,7 @@ class index extends Component {
                     leftContent="消息(66)"
                     rightContent={[
                         <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
-                        <Icon key="1" type="ellipsis" onClick={this.clickVisible} />,
+                        <Icon key="1" type="ellipsis" onClick={() => { this.clickVisible(true) }} />,
                     ]}
                 ></NavBar>
                 {
@@ -52,7 +50,7 @@ class index extends Component {
                         )
                     })
                 }
-                <RightPop visible={this.state.visible} keyPop={'index'} />
+                <RightPop clickVisible={this.clickVisible} visible={this.state.visible} keyPop={'index'} />
             </div>
         )
     }

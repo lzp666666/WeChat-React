@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+body{
+  background-color: #fff!important;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -39,4 +41,7 @@
 a{
   text-decoration:none;
   color: rgb(90, 76, 76);
+}
+.am-navbar{
+  background-color: #fafafa!important;
 }

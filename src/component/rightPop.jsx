@@ -22,8 +22,7 @@ class rightPop extends Component {
                 maskClosable
                 visible={visible}
                 onClose={()=>{
-                    // this.props.visible=false
-                    //如果改变父组件传过来的值？visible
+                    this.props.clickVisible(false)
                 }}
                 animationType="slide-down"
                 transparent

@@ -4,12 +4,12 @@ class chat extends Component {
     render() {
         return (
             <NavBar
-            mode="dark"
-            leftContent="晴空"
-            rightContent={[
-                <Icon key="1" type="ellipsis" />,
-            ]}
-        ></NavBar>
+                mode="light"
+                leftContent="晴空"
+                rightContent={[
+                    <Icon key="1" type="ellipsis" />,
+                ]}
+            ></NavBar>
         )
     }
 }
