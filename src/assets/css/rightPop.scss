@@ -1,12 +1,15 @@
 
 .am-modal-wrap {
+    
+    height: auto!important;
+
+    overflow: inherit!important ;
+    .am-modal{
+    position: absolute;
     left: auto!important;
     top: 55px!important;
     right: 5px!important;;
     bottom: auto!important;
-    height: auto!important;
-    position: relative;
-    overflow: inherit!important ;
     &::after{
         position: absolute;
         content: ' ';
@@ -18,7 +21,9 @@
         border-width: 0 10px 10px;
         border-style: solid;
         border-color: transparent transparent #fff;
+     }
     }
+    
     .am-modal-transparent .am-modal-content{
         border-radius: 5px;
         padding-top: 0!important;

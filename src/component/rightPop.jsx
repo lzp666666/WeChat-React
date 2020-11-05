@@ -21,6 +21,11 @@ class rightPop extends Component {
             <Modal
                 maskClosable
                 visible={visible}
+                onClose={()=>{
+                    // this.props.visible=false
+                    //如果改变父组件传过来的值？visible
+                }}
+                animationType="slide-down"
                 transparent
             >
                 {
