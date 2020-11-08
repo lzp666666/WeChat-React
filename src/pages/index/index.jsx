@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './index.scss'
-import { NavBar, Icon, Flex } from 'antd-mobile';
+import { NavBar, Icon, Flex, Popover } from 'antd-mobile';
 import RightPop from '../../component/rightPop';
+const Item = Popover.Item;
 class index extends Component {
     constructor(props) {
         super(props)
@@ -21,6 +22,12 @@ class index extends Component {
     onClick() {
         this.props.history.push('/chat')
     }
+    handleVisibleChange(){
+        console.log(1)
+    }
+    onSelect(){
+        console.log(2)
+    }
     render() {
         return (
             <div>
@@ -29,9 +36,13 @@ class index extends Component {
                     leftContent="消息(66)"
                     rightContent={[
                         <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
-                        <Icon key="1" type="ellipsis" onClick={() => { this.clickVisible(true) }} />,
+                        <Icon key="1" type="ellipsis" onClick={() => {
+                            this.clickVisible(true)
+                        }} />,
                     ]}
-                ></NavBar>
+                >
+
+                </NavBar>
                 {
                     this.dataList.map((item, index) => {
                         return (

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../assets/css/rightPop.scss'
-import { Modal, Icon } from 'antd-mobile';
-
-
+import { Icon, Popover } from 'antd-mobile';
+const Item = Popover.Item;
+const myImg = src => <Icon type="search" size={src} />;
 class rightPop extends Component {
     constructor(props) {
         super(props)
@@ -15,31 +15,39 @@ class rightPop extends Component {
             ]
         }
     }
+    onSelect = (opt) => {
+        console.log(opt.props.value);
+        this.props.clickVisible(false)
+   };
     render() {
         let { keyPop, visible } = this.props
         return (
-            <Modal
-                maskClosable
-                visible={visible}
-                onClose={()=>{
-                    this.props.clickVisible(false)
-                }}
-                animationType="slide-down"
-                transparent
+            <Popover mask
+            overlayClassName="fortest"
+            overlayStyle={{ color: 'currentColor' }}
+            visible={visible}
+            overlay={
+                this.menuList[keyPop].map((item,index)=>
+                (<Item key="4" key={index} icon={myImg(item.icon)} value={index} data-seed="logId">{item.name}</Item>)
+                )}
+            onSelect={this.onSelect}
+            align={{
+                overflow: { adjustY: 0, adjustX: 0 },
+                offset: [-10, 0],
+            }}
+
+        >
+            <div style={{
+                height: '100%',
+                padding: '0 15px',
+                marginTop:'-70px',
+                marginRight: '5px',
+                display: 'flex',
+                alignItems: 'center',
+            }}
             >
-                {
-                    this.menuList[keyPop] && this.menuList[keyPop].map((item, index) => {
-                        return (
-                            <div style={{ height: '100%' }} key={index}>
-                                <div className="text-vertical">
-                                    <Icon type={item.icon}></Icon>
-                                    <div>{item.name}</div>
-                                </div>
-                            </div>
-                        )
-                    })
-                }
-            </Modal>
+            </div>
+        </Popover>
         )
     }
 }
